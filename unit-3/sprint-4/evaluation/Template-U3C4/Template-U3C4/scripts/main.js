@@ -15,7 +15,7 @@ async function apiCall(url) {
 
 
 function appendArticles(articles, main) {
-
+ let cart=JSON.parse(localStorage.getItem("search_term"))||[];
     //add append logic here
     main.innerHTML="";
     articles.forEach(({title,description,content,url,image,publishedAt}) => {
@@ -34,6 +34,18 @@ function appendArticles(articles, main) {
       link.innerText=url;
 
       div.append(titleC,img,desc,link);
+      div.addEventListener("click",function(){
+        let list={
+            title:titleC.innerText,
+            image:img.src,
+            desc:desc.innerText,
+            content:content,
+            link:link.innerText,
+            published:publishedAt
+        }
+        cart.push(list);
+        localStorage.setItem("search_term",JSON.stringify(cart));
+      })
       main.append(div);
     })
 
