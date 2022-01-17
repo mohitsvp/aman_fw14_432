@@ -2,3 +2,14 @@
     border: 2px solid salmon;
     width: 20%;
 }
+#container{
+    display: flex;
+}
+#main>div{
+    border: 2px solid green;
+    margin-bottom: 20px;
+}
+#main>div>img{
+    width: 500px;
+    height: 200px;
+}

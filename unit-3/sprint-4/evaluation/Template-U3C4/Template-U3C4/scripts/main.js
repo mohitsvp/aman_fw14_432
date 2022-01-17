@@ -21,7 +21,7 @@ function appendArticles(articles, main) {
     articles.forEach(({title,description,content,url,image,publishedAt}) => {
       let div=document.createElement('div');
 
-      let titleC=document.createElement('p');
+      let titleC=document.createElement('h3');
       titleC.innerText="TITLE - "+title;
 
       let img=document.createElement('img');
