@@ -2,6 +2,13 @@ async function apiCall(url) {
 
 
     //add api call logic here
+    try{
+        let res=await fetch(url)
+        let data=await res.json()
+        return data.articles;
+    }catch(err){
+        console.log("err",err);
+    }
 
 
 }
@@ -10,7 +17,26 @@ async function apiCall(url) {
 function appendArticles(articles, main) {
 
     //add append logic here
+    main.innerHTML="";
+    articles.forEach(({title,description,content,url,image,publishedAt}) => {
+      let div=document.createElement('div');
+
+      let titleC=document.createElement('p');
+      titleC.innerText="TITLE - "+title;
+
+      let img=document.createElement('img');
+      img.src=image;
+
+      let desc=document.createElement('p');
+      desc.innerText=description;
+
+      let link=document.createElement('p');
+      link.innerText=url;
+
+      div.append(titleC,img,desc,link);
+      main.append(div);
+    })
 
 }
 
-export { apiCall, appendArticles }
+export { apiCall, appendArticles };

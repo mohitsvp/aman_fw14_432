@@ -6,15 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link rel="stylesheet" href="./styles/main.css">
   </head>
-
   <body>
     <div id="container">
       <div id="sidebar">
-
-        <!--DO NOT CHANGE THIS ID's-->
-
-
+        
       </div>
 
       <div id="main">
@@ -23,5 +20,42 @@
       </div>
     </div>
   </body>
-
 </html>
+<script type="module">
+  import { apiCall, appendArticles} from './scripts/main.js';
+
+  let response=apiCall("https://gnews.io/api/v4/search?q=example&token=b793852d5bdefcb2ca7581b8f370e97c&country=india");
+  let data=document.querySelector("#main");
+  response
+  .then((res) => {
+    console.log(res);
+    appendArticles(res,data)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+
+</script>
+<script type="module">
+  
+  import sidebar from './components/sidebar.js';
+
+     let side=document.querySelector("#sidebar");
+     side.innerHTML=sidebar();
+
+
+  import { apiCall, appendArticles} from './scripts/main.js';
+  
+  let response=apiCall("https://gnews.io/api/v4/search?q=example&token=b793852d5bdefcb2ca7581b8f370e97c&country=india");
+  let data=document.querySelector("#main");
+  response
+  .then((res) => {
+    console.log(res);
+    appendArticles(res,data)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+     
+</script>
+

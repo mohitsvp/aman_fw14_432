@@ -9,20 +9,47 @@
   </head>
 
   <body>
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+   
+      </div>
+      <div>
+        <input id="input" type="text" placeholder="search news">
+        <button id="search_btn">search</button>
+      </div>
     <div id="main">
       <!--No need to add sidebar here, directly display search results-->
 
       <!-- show headline, description and image -->
-
-
-
-      Wrong -> <a href="/Users/jonny/Desktop/misc/jugnu-tester/template-U3C4/Template-U3C4/news.html"></a>
-
-
-      Correct -> <a href="/news.html"></a>
-
-
     </div>
   </body>
 
 </html>
+
+<script type="module">
+  import sidebar from './components/sidebar.js';
+
+let side=document.querySelector("#sidebar");
+side.innerHTML=sidebar();
+
+   import { apiCall, appendArticles} from './scripts/main.js';
+
+   let sea=document.querySelector("#input").value;
+
+   document.querySelector("#search_btn").addEventListener("click",() => {
+       
+  let response=apiCall(`https://gnews.io/api/v4/search?q=${sea}&token=b793852d5bdefcb2ca7581b8f370e97c&country=india`);
+  let data=document.querySelector("#main");
+  response
+  .then((res) => {
+    console.log(res);
+    appendArticles(res,data)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+   })
+
+
+</script>
