@@ -45,6 +45,7 @@ function appendArticles(articles, main) {
         }
         cart.push(list);
         localStorage.setItem("search_term",JSON.stringify(cart));
+        window.location.href="./news.html";
       })
       main.append(div);
     })

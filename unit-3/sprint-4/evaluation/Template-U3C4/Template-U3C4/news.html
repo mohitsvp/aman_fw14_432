@@ -40,6 +40,25 @@
      let side=document.querySelector("#sidebar");
      side.innerHTML=sidebar();
 
+     let cart=JSON.parse(localStorage.getItem("search_term"))||[];
+     let mainT=document.querySelector("#main");
+     display(cart);
+     function display(cart){
+       cart.map(function(elem){
+        mainT.innerHTML="";
+         let head=document.createElement('h3');
+         head.innerText=elem.title;
+         let desc=document.createElement('p');
+         desc.innerText=elem.desc;
+         let img=document.createElement('img');
+         img.src=elem.image;
+         let con=document.createElement('p');
+         con.innerText=elem.content;
+         let pub=document.createElement('p');
+         pub.innerText=elem.published;
+         mainT.append(head,desc,img,con,pub);
+       })
+     }
 
-     
+
 </script>

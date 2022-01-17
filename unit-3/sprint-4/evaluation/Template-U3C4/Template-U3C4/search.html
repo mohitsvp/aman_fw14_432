@@ -40,7 +40,7 @@ side.innerHTML=sidebar();
 
   document.querySelector("#search_btn").addEventListener("click",() => {
     let sea=document.querySelector("#input").value;
-    let url=`https://gnews.io/api/v4/search?q=${sea}&token=f98faf408247d049e470498823763029&country=india&lang=en`;
+    let url=`///https://gnews.io/api/v4/search?q=${sea}&token=f98faf408247d049e470498823763029&country=india&lang=en`;
   let response=apiCall(url);
   let data=document.querySelector("#main");
   response
