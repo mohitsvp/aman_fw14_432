@@ -3,15 +3,13 @@ const express=require("express");
 const app=express();
 
 
-app.get("/books",allBooks,(req,res) => {
+app.get("/books",allBooks,(req,res,next) => {
     return res.send("All books");
 })
 
-function allBooks(){
-    return (req,res,next) => {
-        console.log("Fetching all books");
-        next();
-    }
+function allBooks(req,res,next){
+    console.log("Fetching all books");
+    next();
 }
 
 app.get("/book/GameOfThrones",book("GameOfThrones"),(req,res) => {
