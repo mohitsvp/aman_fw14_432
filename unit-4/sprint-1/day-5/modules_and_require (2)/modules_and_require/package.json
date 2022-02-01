@@ -1,0 +1,15 @@
+{
+  "name": "modules_and_require",
+  "description": "",
+  "version": "1.0.0",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "index": "node index.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
