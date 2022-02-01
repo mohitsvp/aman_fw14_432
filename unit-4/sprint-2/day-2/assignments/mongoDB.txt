@@ -1,0 +1,43 @@
+//created collection//
+use assignment
+
+
+//created users document and insert first document using insert//
+db.users.insert({firstName:"Aman",lastName:"Raj",email:"test@gmail.com",gender:"male",ipAddress:"hhtp://localhost:1234/first",age:"22"})  
+
+//created users documents using insertMany//
+db.users.insertMany([{firstName:"Ripu",lastName:"Verma",email:"test2@gmail.com",gender:"male",ipAddress:"hhtp://localhost:1234/second",age:"23"},
+{firstName:"Priya",lastName:"Verma",email:"test3@gmail.com",gender:"female",ipAddress:"hhtp://localhost:1234/thrid",age:"24"},
+{firstName:"Anit",lastName:"Raj",email:"test4@gmail.com",gender:"male",ipAddress:"hhtp://localhost:1234/fourth",age:"25"},
+{firstName:"Amit",lastName:"Rana",email:"test5@gmail.com",gender:"male",ipAddress:"hhtp://localhost:1234/fifth",age:"26"},
+{firstName:"Satish",lastName:"Dogra",email:"test6@gmail.com",gender:"male",ipAddress:"hhtp://localhost:1234/sixth",age:"27"},
+{firstName:"Ravish",lastName:"Kumar",email:"test7@gmail.com",gender:"male",ipAddress:"hhtp://localhost:1234/seventh",age:"28"},
+{firstName:"Ghanshyam",lastName:"Mandal",email:"test8@gmail.com",gender:"male",ipAddress:"hhtp://localhost:1234/eighth",age:"29"},
+{firstName:"Tarniza",lastName:"Khulal",email:"test9@gmail.com",gender:"female",ipAddress:"hhtp://localhost:1234/nineth",age:"30"},
+{firstName:"Kiran",lastName:"Kumari",email:"test10@gmail.com",gender:"female",ipAddress:"hhtp://localhost:1234/tenth",age:"31"}])
+
+
+//selected documents using find//
+db.users.find().pretty() 
+
+//selected documents using findOne//
+db.users.find({firstName:"Aman"}).pretty()
+
+//updated using update//
+db.users.update({firstName:"Aman"},{firstName:"Pratik"})
+
+//updated using updateMany//
+db.users.updateMany({lastName:"Raj"},{$set:{lastName:"Singh"}})
+
+//remove one// 
+db.users.remove({lastName:"Singh"})
+
+//delete one//
+db.users.deleteOne({firstName:"Ripu"})
+
+//delete Many//
+db.users.deleteMany({gender:"female"},{age:"29"}) 
+
+//delete database//
+db.dropDatabase()
+
