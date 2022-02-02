@@ -1,0 +1,29 @@
+//Import file syntax//mockaroo//
+
+
+
+//to find specific data//
+db.users.find({},{first_name:1,last_name:1,_id:0}).pretty()
+
+//to find AND condition data//
+ db.users.find({$and: [{gender:"Female"},{age:{$lt:28}},{age:{$gt:18}}]}).pretty()
+
+ // to find OR condition data//
+ db.users.find({$or:[{gender:"Female"},{gender:"Male"}]},{first_name:1}).pretty() 
+
+ //to find data using (in)//
+ db.stu.find({age:{$in:["18","21"]}},{age:1}) 
+
+ //sort data//
+ //ascending order
+db.stu.find({age:{$in:["18","21"]}},{first_name:1}).sort({first_name:1}).pretty()
+//descending order//
+db.stu.find({age:{$in:["18","21"]}},{first_name:1}).sort({first_name:-1}).pretty()
+
+//secondary sort//
+db.stu.find({age:{$in:["18","21"]}},{first_name:1}).sort({age:-1,first_name:1}).pretty()
+
+//to get limited data//
+db.stu.find({},{first_name:1}).limit(5)
+
+//
