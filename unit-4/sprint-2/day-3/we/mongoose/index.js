@@ -17,7 +17,7 @@ const express = require("express");
    gender: { type: String, required: false, default: "Male" },
    age: { type: Number, required: true },
    ip_address: { type: String, required: false },
- });
+ },{versionKey:false,timestamps:true});
  // step 3 :- create a model
  const User = mongoose.model("user", userSchema); // user => users
  //db.users.find()
@@ -32,6 +32,18 @@ const express = require("express");
      return res.send(err.message);
    }
  });
+
+
+ app.post("/users", async (req, res) => {
+  // thennable => proper then
+  try {
+    const user = await User.create(req.body); // db.users.find() // proper promise
+    return res.send(user);
+  } catch (err) {
+    return res.send(err.message);
+  }
+});
+
  app.listen(2345, async function () {
    try {
      await connect();
