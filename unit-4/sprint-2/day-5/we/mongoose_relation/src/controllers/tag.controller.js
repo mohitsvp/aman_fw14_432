@@ -18,7 +18,7 @@ router.post("", async (req, res) => {
     try {
       const tag = await Tag.create(req.body);
   
-      return res.send(tag);
+      return res.status(201).send(tag);
     } catch (err) {
       return res.status(500).send(err.message);
     }
