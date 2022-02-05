@@ -45,6 +45,29 @@ router.post("", async (req, res) => {
       return res.status(500).send(err.message);
     }
   });
+
+  router.get("/max-marks", async (req, res) => {
+    try {
+      const submissions = await Submission.find()
+      .populate({path:"user_id"})
+      .populate({path:"evaluation_id"})
+      .lean().exec();
+  
+      let finalsubmissions = submissions.map((product) => {
+        return product.marks;
+      });
+  
+      const maxLength = Math.max(...finalsubmissions);
+  
+      finalsubmissions = submissions.filter((product) => {
+        return product.marks === maxLength;
+      });
+  
+      return res.status(200).send(finalsubmissions);
+    } catch (err) {
+      return res.status(500).send({ message: err.message });
+    }
+  });
   
   // met + route => get /${variable} and the name of variable is id
   router.get("/:id", async (req, res) => {
@@ -60,6 +83,8 @@ router.post("", async (req, res) => {
       return res.status(500).send(err.message);
     }
   });
+
+
   
   // met + route => patch /${variable} and the name of variable is id
   router.patch("/:id", async (req, res) => {
