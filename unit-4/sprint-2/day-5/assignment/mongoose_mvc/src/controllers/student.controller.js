@@ -2,11 +2,11 @@ const express = require("express");
 
 const router = express.Router();
 
-const User= require("../models/user.model");
+const Student= require("../models/student.model");
 
 
 
-//db.users.find()
+//db.students.find()
 // User => db.users
 
 // admin, user, student, teacher, IA, SDE1
@@ -24,9 +24,9 @@ const User= require("../models/user.model");
 
 router.post("", async (req, res) => {
     try {
-      const user = await User.create(req.body);
+      const student = await Student.create(req.body);
   
-      return res.status(201).send(user);
+      return res.status(201).send(student);
     } catch (err) {
       return res.status(500).send(err.message);
     }
@@ -35,9 +35,11 @@ router.post("", async (req, res) => {
   router.get("", async (req, res) => {
     // thennable => proper then
     try {
-      const users = await User.find().lean().exec(); // db.users.find() // proper promise
+      const students = await Student.find()
+      .populate({ path: "user_id" })
+      .lean().exec(); // db.students.find() // proper promise
   
-      return res.send(users);
+      return res.send(students);
     } catch (err) {
       return res.status(500).send(err.message);
     }
@@ -46,12 +48,12 @@ router.post("", async (req, res) => {
   // met + route => get /${variable} and the name of variable is id
   router.get("/:id", async (req, res) => {
     try {
-      const user = await User.findById(req.params.id).lean().exec();
+      const student = await Student.findById(req.params.id).lean().exec();
   
-      if (user) {
-        return res.send(user);
+      if (student) {
+        return res.send(student);
       } else {
-        return res.status(404).send({ message: "User not found" });
+        return res.status(404).send({ message: "student not found" });
       }
     } catch (err) {
       return res.status(500).send(err.message);
@@ -61,13 +63,13 @@ router.post("", async (req, res) => {
   // met + route => patch /${variable} and the name of variable is id
   router.patch("/:id", async (req, res) => {
     try {
-      const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+      const student = await Student.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
       })
         .lean()
         .exec();
   
-      res.status(201).send(user);
+      res.status(201).send(student);
     } catch (err) {
       return res.status(500).send(err.message);
     }
@@ -76,9 +78,9 @@ router.post("", async (req, res) => {
   // met + route => delete /${variable} and the name of variable is id
   router.delete("/:id", async (req, res) => {
     try {
-      const user = await User.findByIdAndDelete(req.params.id).lean().exec();
+      const student = await Student.findByIdAndDelete(req.params.id).lean().exec();
   
-      res.send(user);
+      res.send(student);
     } catch (err) {
       return res.status(500).send(err.message);
     }

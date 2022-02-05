@@ -35,7 +35,9 @@ router.post("", async (req, res) => {
   router.get("", async (req, res) => {
     // thennable => proper then
     try {
-      const batchs = await Batch.find().lean().exec(); // db.batchs.find() // proper promise
+      const batchs = await Batch.find()
+      .populate({ path: "user_id" })
+      .lean().exec(); // db.batchs.find() // proper promise
   
       return res.send(batchs);
     } catch (err) {
