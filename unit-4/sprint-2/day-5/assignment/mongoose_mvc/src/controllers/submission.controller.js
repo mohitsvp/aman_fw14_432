@@ -4,22 +4,6 @@ const router = express.Router();
 
 const Submission= require("../models/submission.model");
 
-
-
-//db.submissions.find()
-// User => db.users
-
-// admin, user, student, teacher, IA, SDE1
-
-/*
-  work with users collection
-  GET => get /users
-  POST => post /users
-  GET SINGLE ITEM => get /users/:id
-  UPDATE SINGLE ITEM => patch /users/:id
-  DELETE SINGLE ITEM => delete /users/:id
-*/
-
 // ----------------------------- USERS CRUD -----------------------------------
 
 router.post("", async (req, res) => {
