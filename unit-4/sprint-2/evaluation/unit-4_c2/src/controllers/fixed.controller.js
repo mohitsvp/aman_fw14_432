@@ -24,4 +24,13 @@ router.get("", async (req,res) => {
     } 
 });
 
+router.delete("/:id", async (req,res) => {
+    try{
+        const fixed=await Fixed.findByIdAndDelete(req.params.id).lean().exec();
+        return res.send(fixed);
+    }catch(err){
+      return res.send(err.message);
+    } 
+});
+
 module.exports=router;
