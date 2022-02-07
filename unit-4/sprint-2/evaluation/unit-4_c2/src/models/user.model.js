@@ -10,6 +10,11 @@ const userSchema = new mongoose.Schema(
     address:{type:String,required:true},
     gender:{type:String,required:false,default:"Female"},
     type:{type:String,required:false,default:"customer"},
+    branch_id:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "branch",
+        required: true,
+    },
     },
     {
       versionKey:false,

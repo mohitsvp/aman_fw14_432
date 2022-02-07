@@ -15,7 +15,9 @@ router.post("", async (req,res) => {
 
 router.get("", async (req,res) => {
     try{
-        const master=await Master.find().lean().exec();
+        const master=await Master.find()
+        .populate({path:"user_id"})
+        .lean().exec();
         return res.send(master);
     }catch(err){
       return res.send(err.message);
