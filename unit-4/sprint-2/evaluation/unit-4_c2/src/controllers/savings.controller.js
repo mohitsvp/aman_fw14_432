@@ -15,9 +15,10 @@ router.post("", async (req,res) => {
 
 router.get("", async (req,res) => {
     try{
-        const savings=await Savings
+        const savings=await Savings.find()
         .populate({path:"user_id"})
-        .find().lean().exec();
+        .populate({path:"branch_id"})
+        .lean().exec();
         return res.send(savings);
     }catch(err){
       return res.send(err.message);

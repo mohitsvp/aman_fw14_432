@@ -9,6 +9,11 @@ const savingsSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
         required: true,
+    },
+    branch_id:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "branch",
+        required: true,
     }
     },
     {
