@@ -10,6 +10,7 @@ const User = require("../models/user.model");
 const upload = require("../middlewares/file-upload");
 
 
+
 router.post("",upload.single("profile_pic") ,async (req,res) => {
     try{
      const user = await User.create({
@@ -45,12 +46,13 @@ router.patch("/:id",upload.single("profile_pic"),async (req, res) => {
     try {
       const user = await User.findByIdAndDelete(req.params.id).lean().exec();
   
-      res.send(user);
+     res.send(user);
     } catch (err) {
       return res.status(500).send(err.message);
     }
   });
-
+ 
+  
 
 router.get("", async (req,res) => {
     try{
