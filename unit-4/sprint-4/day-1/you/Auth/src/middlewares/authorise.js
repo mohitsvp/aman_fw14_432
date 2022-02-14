@@ -12,6 +12,7 @@ module.exports = function (permittedRoles) {
         if (user.role.includes(role)) {
           isPermitted = true;
         }
+        
       });
   
       // if not then throw an error

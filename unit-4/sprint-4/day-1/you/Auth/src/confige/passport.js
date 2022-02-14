@@ -30,10 +30,6 @@ passport.use(new GoogleStrategy({
             role:["customer"],
         });
     }
-    console.log("user",user)
-
-    const token = newToken(user)
-    console.log("token",token);
     return done(null,user);
     }catch(err){
         console.log("err:",err.message);

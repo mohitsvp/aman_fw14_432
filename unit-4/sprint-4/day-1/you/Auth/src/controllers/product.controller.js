@@ -43,5 +43,16 @@ router.patch("/:id",authenticate,authorise(["seller", "admin"]), async (req, res
   }
 });
 
+router.delete("/:id",authenticate,authorise(["seller", "admin"]), async (req, res) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id, req.body)
+      .lean()
+      .exec();
+    return res.send(product);
+  } catch (err) {
+    return res.status(500).send({ message: err.message });
+  }
+});
+
 
 module.exports = router;
