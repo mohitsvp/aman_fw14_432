@@ -23,7 +23,7 @@ const permission = function (permittedRoles) {
 
       const product_id = await Product.findById(req.params.id).lean().exec();
       const seller_id = product_id.user_id
-      if(req.user_id !== seller_id.toString()){
+      if(req.user._id !== seller_id.toString()){
         return res.send("Permission Denied for You");
       }
       // if yes then return next
