@@ -34,8 +34,9 @@ router.patch("/:id",async (req,res) => {
       const post = await Post.findByIdAndUpdate(req.params.id,req.body,{
           new:true,
       }).lean().exec();
+      const postID= await Post.findById(req.params.id);
       const ID = post.user_id
-      if(req.user._id !== ID.toString()){
+      if(postID.user_id.toString() !== ID.toString()){
          return res.send("Permission Denied for you");
       }else{
         return res.send(post);
@@ -44,5 +45,14 @@ router.patch("/:id",async (req,res) => {
       return res.send(err.message);
   }
 });
+
+router.delete("/:id",async (req,res) => {
+    try{
+        const post = await Post.findByIdAndDelete(req.params.id,req.body).lean().exec();
+        return res.send(post);
+    }catch(err){
+        return res.send(err.message);
+    }
+  });
 
 module.exports=router;
