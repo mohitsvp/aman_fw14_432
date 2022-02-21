@@ -1,5 +1,4 @@
 const transporter = require("./configs/mail");
-
 const sendMail = async ({
   from,
   to,
@@ -35,5 +34,4 @@ const adminMail = async ({ from, to, user }) => {
     text: `Please welcome ${user.first_name} ${user.last_name}`,
   });
 };
-
 module.exports = { sendMail, verificationMail, adminMail };

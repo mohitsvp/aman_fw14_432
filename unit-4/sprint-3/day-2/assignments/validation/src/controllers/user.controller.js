@@ -72,5 +72,4 @@ router.get("", async (req,res) => {
       return res.send(err.message);
     } 
 });
-
 module.exports=router;
