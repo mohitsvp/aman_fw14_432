@@ -2,7 +2,7 @@ import {mult,add} from "./calc.js";
 import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
-// import img from "./img/webpacklogo.png"
+import img from "./img/webpacklogo.png"
 
 console.log(mult(4,4));
 
@@ -24,7 +24,7 @@ ReactDOM.render(
   <h1>world</h1>
   <input />
   <button>submit</button>
-  {/* <img src=img ></img> */}
+  <img src={img} ></img>
 </div>,
 document.querySelector("#root"));
 
