@@ -1,6 +1,6 @@
 import {mult,add} from "./calc.js";
 import "./index.css";
-
+import img from "./img/webpacklogo.png"
 
 console.log(mult(4,4));
 
@@ -12,7 +12,10 @@ const h1 = document.createElement("h1");
 h1.innerText="welcome to webpack todo";
 h1.classList.add("redtext");
 
-document.querySelector("#root").append(h1);
+const imga =document.createElement('img');
+imga.src={img};
+
+document.querySelector("#root").append(imga,h1);
 
 document.querySelector("#save_btn").addEventListener("click",save);
 
