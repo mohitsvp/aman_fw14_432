@@ -2,7 +2,7 @@
 import './App.css';
 function App() {
   const oprSys=['Android','blackberry','iphone','Windows Phone'];
-  const MobileCompany=['Samsung','HTC','Micromax','Apple'];
+  //const MobileCompany=['Samsung','HTC','Micromax','Apple'];
  return (
      <div>
       <h1>Mobile Operating System</h1>
@@ -11,9 +11,15 @@ function App() {
          //UserComponent(e)
        ))}
        <h1>Mobile Manufactures</h1>
-       {MobileCompany.map((e) => (
+       {/* {MobileCompany.map((e) => (
            company(e)
-         ))}
+         ))} */}
+        <ul>
+          <li style={{listStyleType: "square"}}>Samsung</li>
+          <li style={{listStyleType: "square"}}>HTC</li>
+          <li>Micromax</li>
+          <li  style={{listStyleType: "circle"}}>Apple</li>
+        </ul>
       </div>
  );
 }
@@ -25,13 +31,16 @@ function operating(e){
    </ul>
  )
 }
-function company(e){
-  return(
-    <ul>
-      <li>{e}</li>
-    </ul>
-  )
- }
+// function company(e){
+//   const style={
+//     listStyleType: "circle"
+//   }
+//   return(
+//     <ul>
+//         <li style={style}>{e}</li>
+//     </ul>
+//   )
+//  }
 
 // function App() {
 //    const data=[
