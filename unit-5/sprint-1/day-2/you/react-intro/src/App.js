@@ -2,45 +2,42 @@
 import './App.css';
 function App() {
   const oprSys=['Android','blackberry','iphone','Windows Phone'];
-  //const MobileCompany=['Samsung','HTC','Micromax','Apple'];
+  const MobileCompany=[
+    {name:'Samsung',listyle:'square'},
+    {name:'HTC',listyle:'square'},
+    {name:'Micromax',listyle:'disc'},
+    {name:'Apple',listyle:'circle'}
+  ];
  return (
      <div>
       <h1>Mobile Operating System</h1>
-       {oprSys.map((e) => (
-         operating(e)
+       {oprSys.map((ele) => (
+         Operating(ele)
          //UserComponent(e)
        ))}
        <h1>Mobile Manufactures</h1>
-       {/* {MobileCompany.map((e) => (
-           company(e)
-         ))} */}
-        <ul>
-          <li style={{listStyleType: "square"}}>Samsung</li>
-          <li style={{listStyleType: "square"}}>HTC</li>
-          <li>Micromax</li>
-          <li  style={{listStyleType: "circle"}}>Apple</li>
-        </ul>
+       {MobileCompany.map((e) => (
+           <Company name={e.name} listyle={e.listyle}/>
+         ))}
       </div>
  );
 }
 
-function operating(e){
+function Operating(opr){
   return(
    <ul>
-     <li>{e}</li>
+     <li>{opr}</li>
    </ul>
  )
 }
-// function company(e){
-//   const style={
-//     listStyleType: "circle"
-//   }
-//   return(
-//     <ul>
-//         <li style={style}>{e}</li>
-//     </ul>
-//   )
-//  }
+function Company({name,listyle}){
+  
+  return(
+    <ul>
+        <li style={{listStyleType:listyle}}>{name}</li>
+    </ul>
+  )
+ }
 
 // function App() {
 //    const data=[
