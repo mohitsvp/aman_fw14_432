@@ -1,7 +1,6 @@
 // import {useState} from 'react';
-import Todo from './componets/Todo';
 import './App.css';
-import TodoItems from './componets/TodoItems';
+import GroceryInput from './componets/GroceryInput';
 
 function App() {
   // const [counter,setCounter] = useState(0);
@@ -13,8 +12,7 @@ function App() {
     <div className="App">
       {/* <Left fn={getData} />
       <Right data={counter} /> */}
-      <Todo />
-      <TodoItems />
+      <GroceryInput />
     </div>
   );
 }
