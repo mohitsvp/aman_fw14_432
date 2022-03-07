@@ -9,7 +9,7 @@ function App() {
   //   setCounter(data);
   // }
   return (
-    <div className="App">
+    <div>
       {/* <Left fn={getData} />
       <Right data={counter} /> */}
       <GroceryInput />

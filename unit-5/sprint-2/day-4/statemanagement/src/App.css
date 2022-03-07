@@ -1,3 +1,40 @@
-.App {
-  text-align: center;
+.App{
+  width: 500px;
+  background: grey;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+input{
+  width: 400px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+button{
+  background: salmon;
+  border: none;
+  border-radius: 20px;
+  width: 70px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  margin-left: 20px;
+}
+button:hover{
+  background-color: crimson;
+}
+form{
+  margin-bottom: 50px;
+}
+
+.list{
+  display: flex;
+}
+.list>div{
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

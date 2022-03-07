@@ -3,13 +3,13 @@ import React from 'react'
 
 const GroceryList = (props) => {
   return (
-    <div>
-      <tr>
-        <td>{props.task}</td>
-        <td><button onClick={() => {
+    <div className='list'>
+       
+       <div>{props.task}</div>
+        <div><button onClick={() => {
           props.onSelect(props.id)
-        }}>Delete</button></td>
-      </tr>
+        }}>Delete</button></div>
+       
     </div>
   )
 }

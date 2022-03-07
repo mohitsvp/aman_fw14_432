@@ -30,23 +30,11 @@ const GroceryInput = () => {
           <button type="submit">Add</button>
        </div>
        </form>
-       <table>
-          <thead>
-            <tr>
-              <th>Grocery List</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-             <tr>
              {
             list.map((value,index) => {
              return <GroceryList key={index} id={index} task={value} onSelect={deleteGrocery}/>
              })
             }
-             </tr>
-          </tbody>
-       </table>
     </div>
   )
 }
