@@ -1,0 +1,89 @@
+{
+  "groceries": [
+    {
+      "title": "Potatos",
+      "purchased": false,
+      "id": 1
+    },
+    {
+      "title": "tomato",
+      "purchased": false,
+      "id": 2
+    },
+    {
+      "title": "milk",
+      "purchased": false,
+      "id": 3
+    },
+    {
+      "title": "bread",
+      "purchased": false,
+      "id": 4
+    },
+    {
+      "title": "onion",
+      "purchased": false,
+      "id": 5
+    },
+    {
+      "title": "ketchup",
+      "purchased": false,
+      "id": 6
+    },
+    {
+      "title": "ketchup",
+      "purchased": false,
+      "id": 7
+    },
+    {
+      "title": "egg",
+      "purchased": false,
+      "id": 8
+    },
+    {
+      "title": "biscuit",
+      "purchased": false,
+      "id": 9
+    },
+    {
+      "title": "jeera",
+      "purchased": false,
+      "id": 10
+    },
+    {
+      "title": "dal",
+      "purchased": false,
+      "id": 11
+    },
+    {
+      "title": "rice",
+      "purchased": false,
+      "id": 12
+    },
+    {
+      "title": "sugar",
+      "purchased": false,
+      "id": 13
+    },
+    {
+      "title": "jaggery",
+      "purchased": false,
+      "id": 14
+    },
+    {
+      "title": "cornider",
+      "purchased": false,
+      "id": 15
+    },
+    {
+      "title": "cake",
+      "purchased": false,
+      "id": 16
+    },
+    {
+      "title": "hinge",
+      "purchased": false,
+      "id": 17
+    }
+  ]
+}
