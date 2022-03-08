@@ -13,14 +13,14 @@ useEffect(() => {
 },[page]);
 
 const getData = () => {
-  axios.get("http://localhost:3001/groceries").then((res) => {
+  axios.get(`http://localhost:3001/groceries?_limit=3&_page=${page}`).then((res) => {
     setGroceries(res.data);
   })
 }
   return (
     <div><input type="text" onChange={(e) => setText(e.target.value)} />
     <button onClick={() => {
-      fetch(`http://localhost:3001/groceries?_limit=3&_page=${page}`,{
+      fetch(`http://localhost:3001/groceries`,{
         method:"POST",
         body:JSON.stringify({title:text,purchased:false}),
         headers:{
@@ -37,7 +37,7 @@ const getData = () => {
     <button onClick={() => {
       setPage(page-1)
     }}>Prev</button>
-    
+
     <button onClick={() => {
       setPage(page+1)
     }}>Next</button>
