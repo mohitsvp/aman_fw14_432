@@ -73,5 +73,5 @@ const GroceryInput = () => {
     </div>
   )
 }
-
+//json-server db.json --port 3001 --watch
 export default GroceryInput

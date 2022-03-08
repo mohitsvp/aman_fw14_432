@@ -45,5 +45,5 @@ const getData = () => {
   )
 
 }
-
+//
 export default Groceries
