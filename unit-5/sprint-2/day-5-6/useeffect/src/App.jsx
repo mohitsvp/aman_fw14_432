@@ -5,7 +5,7 @@ import Stopwatch from './components/Stopwatch';
 
 function App() {
   const [show,setShow] = useState(true);
-  const startTime=10,endTime=20;
+  const startTime=0,endTime=10;
   return (
     <div className="App">
       useEffect
