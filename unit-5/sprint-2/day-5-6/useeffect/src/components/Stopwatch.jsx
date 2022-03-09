@@ -6,7 +6,7 @@ const Stopwatch = (props) => {
      const id= setInterval(() => {
             console.log("Interval",timer);
             setTimer((prev) => {
-               if(prev==props.endTime){
+               if(prev===props.endTime){
                  console.log("unmounted Timer using start and end time");
                  return clearInterval(id);
                }else{
