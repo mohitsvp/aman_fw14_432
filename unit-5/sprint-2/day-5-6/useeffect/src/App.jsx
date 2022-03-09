@@ -5,11 +5,12 @@ import Stopwatch from './components/Stopwatch';
 
 function App() {
   const [show,setShow] = useState(true);
+  const startTime=10,endTime=20;
   return (
     <div className="App">
       useEffect
       {/* <Groceries /> */}
-      {show ? <Stopwatch /> : ""}
+      {show ? <Stopwatch startTime={startTime} endTime={endTime} /> : ""}
 
       <button
       onClick={() => {
