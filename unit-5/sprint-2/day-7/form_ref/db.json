@@ -1,61 +1,31 @@
 {
   "users": [
     {
-      "username": "123raj",
+      "name": "Aman Raj",
       "age": "24",
-      "email": "a@a.com",
+      "address": "vill-barari jagdish,post-thawe,dist-gopalganj",
+      "department": "developing",
+      "salary": "100000",
+      "maritalState": false,
       "id": 1
     },
     {
-      "username": "raj",
-      "age": "25",
-      "email": "a@b.com",
+      "name": "Ankit kumar",
+      "age": "28",
+      "address": "vill-barari jagdish,post-thawe,dist-gopalganj",
+      "department": "quality",
+      "salary": "100000",
+      "maritalState": true,
       "id": 2
     },
     {
+      "name": "Amit kumar",
+      "age": "30",
+      "address": "vill-barari jagdish,post-thawe,dist-gopalganj",
+      "department": "production",
+      "salary": "200000",
+      "maritalState": true,
       "id": 3
-    },
-    {
-      "username": "123raj",
-      "age": "24",
-      "email": "ad@sfs.com",
-      "id": 4
-    },
-    {
-      "username": "",
-      "age": "",
-      "email": "",
-      "id": 5
-    },
-    {
-      "username": "",
-      "age": "",
-      "email": "",
-      "id": 6
-    },
-    {
-      "username": "",
-      "age": "",
-      "email": "",
-      "id": 7
-    },
-    {
-      "username": "123raj",
-      "age": "24",
-      "email": "ad@sfs.com",
-      "id": 8
-    },
-    {
-      "username": "123raj",
-      "age": "24",
-      "email": "ad@sfs.com",
-      "id": 9
-    },
-    {
-      "username": "hello",
-      "age": "12",
-      "email": "a@c.com",
-      "id": 10
     }
   ]
 }
