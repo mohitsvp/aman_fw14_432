@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
 const Forms = () => {
 
@@ -17,6 +18,9 @@ const Forms = () => {
     }
     const submitForm = (e) => {
         e.preventDefault();
+        axios.post("http://localhost:3005/users",formData).then(() => {
+            alert("user created successfully");
+        })
     }
   return (
     <div>
