@@ -20,6 +20,11 @@ const Forms = () => {
         e.preventDefault();
         axios.post("http://localhost:3005/users",formData).then(() => {
             alert("user created successfully");
+            // setFormData({
+            //     username:"",
+            //     age:"",
+            //     email:"",   
+            // })
         })
     }
   return (
