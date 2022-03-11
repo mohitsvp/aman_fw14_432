@@ -3,19 +3,14 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-width: 100px;
-height: 60px;
-background: ${({theme}) => theme === "light" ? "salmon" : "crimson"};
-color: white;
-font-weight: bold;
-border-radius: 10px;
-border: none;
+width: 150px;
+height: 30px;
+background: ${props => props.background || "transparent"};
+color:${props => props.color || "black" } ;
+font-weight:500;
+border:${props => props.border || "none"};
 margin-left:10px;
-
-&:hover{
-    background: ${({theme}) => theme === "light" ? "crimson" : "salmon"};
-    cursor: pointer;  
-}
+margin-top: 10px;
 `;
 
 export default Button
