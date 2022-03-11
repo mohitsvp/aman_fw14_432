@@ -1,0 +1,13 @@
+.mybutton{
+    width: 100px;
+    height: 60px;
+    background: salmon;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+.mybutton:hover{
+  background: crimson;
+  cursor: pointer;
+}
